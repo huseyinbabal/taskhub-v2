@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: notification-service
+
+server:
+  # taskhub-api owns 8080 locally.
+  port: 8081

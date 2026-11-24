@@ -1,0 +1,7 @@
+spring:
+  docker:
+    compose:
+      enabled: true
+      # spring-boot:run uses the module directory as its working directory.
+      file: ../compose.yaml
+      lifecycle-management: start-only
