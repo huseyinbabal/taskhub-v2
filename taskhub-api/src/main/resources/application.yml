@@ -1,3 +1,5 @@
+# Shared defaults for every profile. Secrets never have a default here: prod gets them from the
+# environment, and dev/test supply their own throwaway values (SPEC § Session 1, requirement 4).
 spring:
   application:
     name: taskhub-api
@@ -5,3 +7,24 @@ spring:
     compose:
       # Only the dev profile starts local containers (see application-dev.yml).
       enabled: false
+  jpa:
+    open-in-view: false
+
+taskhub:
+  security:
+    jwt:
+      secret: ${JWT_SECRET:}
+      ttl: 1h
+  cors:
+    allowed-origins: []
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+  endpoint:
+    health:
+      # Kubernetes probes: /actuator/health/liveness and /actuator/health/readiness.
+      probes:
+        enabled: true

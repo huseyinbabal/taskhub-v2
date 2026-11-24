@@ -5,3 +5,17 @@ spring:
       # spring-boot:run uses the module directory as its working directory.
       file: ../compose.yaml
       lifecycle-management: start-only
+
+taskhub:
+  security:
+    jwt:
+      # Local development only. Not a secret, so never reuse it outside dev.
+      secret: dev-only-insecure-jwt-secret-change-me-0123456789
+  cors:
+    allowed-origins:
+      - http://localhost:3000
+
+logging:
+  level:
+    com.huseyin.taskhub: DEBUG
+    org.hibernate.SQL: DEBUG

@@ -1,0 +1,6 @@
+# Test profile, activated for every Surefire/Failsafe run (see the parent pom.xml). It lives in
+# src/test so these throwaway values never ship in the application jar.
+taskhub:
+  security:
+    jwt:
+      secret: test-only-insecure-jwt-secret-0123456789abcdef
