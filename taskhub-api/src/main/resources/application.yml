@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: taskhub-api
+  docker:
+    compose:
+      # Only the dev profile starts local containers (see application-dev.yml).
+      enabled: false
